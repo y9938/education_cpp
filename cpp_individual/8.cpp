@@ -7,22 +7,7 @@
 
 using namespace std;
 
-void del(char st[][256], const int N, int num)
-{
-    int i, j, k;
-    for (i = 0; i < N; i++)
-    {
-        k = 0;
-        for (j = 0; st[i][j] != '\0'; j++)
-        {
-            if (st[i][j] <= num)
-            {
-                st[i][k++] = st[i][j];
-            }
-        }
-        st[i][k] = '\0';
-    }
-}
+void del(char st[][256], const int N, int num);
 
 int main()
 {
@@ -45,5 +30,22 @@ int main()
     for(int i = 0; i < N; i++)
     {
         cout << st[i] << endl;
+    }
+}
+
+void del(char st[][256], const int N, int num)
+{
+    int i, j, k;
+    for (i = 0; i < N; i++)
+    {
+        k = 0;
+        for (j = 0; st[i][j] != '\0'; j++)
+        {
+            if (st[i][j] <= num)
+            {
+                st[i][k++] = st[i][j];
+            }
+        }
+        st[i][k] = '\0';
     }
 }

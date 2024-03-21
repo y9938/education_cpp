@@ -2,9 +2,8 @@
 
 using namespace std;
 
-int main() {
-	setlocale(LC_CTYPE, "RU");
-
+int main() 
+{
 	int k;
 	cout << "Введите четырехзначное число: ";
 	cin >> k;

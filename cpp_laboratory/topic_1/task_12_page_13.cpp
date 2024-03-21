@@ -3,8 +3,6 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "RU");
-
     int hours, minutes, seconds, work_time;
     cout << "Введите время начала задачи (часы, минуты, секунды) и длительность задачи (в секундах): \n";
     cin >> hours >> minutes >> seconds >> work_time;

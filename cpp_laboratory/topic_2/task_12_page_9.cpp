@@ -3,9 +3,8 @@
 
 using namespace std;
 
-int main() {
-	setlocale(LC_CTYPE, "RU");
-
+int main() 
+{
 	int num1, num2, num3;
 	cout << "Введите 3 ненулевых целых числа: ";
 	cin >> num1 >> num2 >> num3;

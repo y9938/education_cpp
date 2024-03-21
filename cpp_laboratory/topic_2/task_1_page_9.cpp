@@ -1,9 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-int main() {
-	setlocale(LC_ALL, "RU");
-
+int main() 
+{
 	int k, m, n;
 	cout << "Введите 3 числа: ";
 	cin >> k >> m >> n;

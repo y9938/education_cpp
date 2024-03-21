@@ -1,9 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-int main() {
-	setlocale(LC_ALL, "RU");
-
+int main() 
+{
 	int num, d1, d2, d3, d4, d5, d6;
 	cout << "Введите шестизначное число = ";
 	cin >> num;

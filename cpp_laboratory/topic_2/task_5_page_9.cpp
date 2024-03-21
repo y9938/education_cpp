@@ -1,9 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-int main() {
-	setlocale(LC_ALL, "RU");
-
+int main() 
+{
 	double feet, kilometers;
 	cout << "Введите 2 растояния (1 - футы, 2 - км)\n";
 	cin >> feet >> kilometers;

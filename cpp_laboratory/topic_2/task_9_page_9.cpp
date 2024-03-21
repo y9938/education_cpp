@@ -1,9 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-int main() {
-    setlocale(LC_ALL, "RU");
-
+int main() 
+{
     int k;
     cout << "Введите k = ";
     cin >> k;
