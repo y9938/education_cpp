@@ -2,7 +2,9 @@
  * Поменять местами максимальный и минимальный элементы матрицы.
 */
 
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 const int n = 2;
 
@@ -13,11 +15,11 @@ void max_min(int m[n][n]);
 int main()
 {
     int matr[n][n];
-    printf("Enter matrix %d x %d: \n", n, n);
+    cout << "Enter matrix " << n << " x " << n << "\n";
     inputMatrix(matr);
 
     max_min(matr);
-    printf("result:\n");
+    cout << "result:\n";
     printMatrix(matr);
 }
 
@@ -27,7 +29,7 @@ void inputMatrix(int m[n][n])
     {
         for (int j = 0; j < n; j++)
         {
-            scanf("%d", &m[i][j]);
+            cin >> m[i][j];
         }
     }
 }
@@ -38,16 +40,16 @@ void printMatrix(int m[n][n])
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%d ", m[i][j]);
+            cout << m[i][j] << " ";
         }
-        printf("\n");
+        cout << "\n";
     }
 }
 
 void max_min(int m[n][n])
 {
     int max = m[0][0], min = m[0][0];
-    int I_max, J_max, I_min, J_min;
+    int I_max = 0, J_max = 0, I_min = 0 , J_min = 0;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -66,7 +68,6 @@ void max_min(int m[n][n])
             }
         }
     }
-    int k = m[I_max][J_max];
-    m[I_max][J_max] = m[I_min][J_min];
-    m[I_min][J_min] = k;
+    m[I_max][J_max] = min;
+    m[I_min][J_min] = max;
 }
