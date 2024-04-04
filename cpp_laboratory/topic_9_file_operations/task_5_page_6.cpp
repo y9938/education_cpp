@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../5.txt");
+    ifstream input_file("../5_input.txt");
     ofstream result_file("../5_result.txt");
 
     string line, result;

@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../2.txt");
+    ifstream input_file("../2_input.txt");
     ofstream output_file("../2_result.txt");
 
     string line;

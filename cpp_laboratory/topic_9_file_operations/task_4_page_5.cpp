@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../4.txt");
+    ifstream input_file("../4_input.txt");
     ofstream result_file("../4_result.txt");
 
     string line;

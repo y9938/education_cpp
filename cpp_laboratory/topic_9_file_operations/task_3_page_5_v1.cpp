@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../3.txt");
+    ifstream input_file("../3_input.txt");
     ofstream result_file("../3_result.txt");
 
     string line, st = "star";

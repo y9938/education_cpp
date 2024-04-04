@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../6.txt");
+    ifstream input_file("../6_input.txt");
 
     string line;
     int count_open = 0;
