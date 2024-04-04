@@ -21,25 +21,15 @@ int main()
         for (int i = 0; i < len; ++i)
         {
             if (line[i] == '{')
-            {
                 ++count_open;
-            }
             else
-            {
                 if (line[i] == '}')
-                {
                     ++count_close;
-                }
-            }
         }
     }
     
     if (count_open == count_close)
-    {
         cout << "Good" << endl;
-    }
     else
-    {
         cout << "Bad" << endl;
-    }
 }
