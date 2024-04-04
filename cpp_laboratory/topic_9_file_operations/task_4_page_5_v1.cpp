@@ -16,19 +16,15 @@ int main()
     string line;
     while (getline(input_file, line))
     {
-        string result; // Создаем новую строку и заполняем ее
         int len = line.length();
         for (int i = 0; i < len; ++i)
         {
             if (line[i] == '.')
             {
-                result += "...";
-            }
-            else
-            {
-                result += line[i];
+                line.insert(i + 1, "..");
+                i += 2;
             }
         }
-        result_file << result << endl;
+        result_file << line << endl;
     }
 }

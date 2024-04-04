@@ -1,0 +1,5 @@
+Debugging is like being a detective.
+The quick brown fox jumps over the lazy dog.
+Programming languages are like pizzas.
+Sometimes, the best thing to do is log off.
+Keep calm and code on.

@@ -1,0 +1,45 @@
+/*
+Дан файл, содержащий программу на языке С++. Проверить эту программу на
+несоответствие числа открывающих и закрывающих фигурных скобок.
+*/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    ifstream input_file("../6.txt");
+    if (!input_file.is_open())
+    {
+        cerr << "Failed to open file" << endl;
+        return 1;
+    }
+
+    string line;
+    int count = 0;
+    while (getline(input_file, line))
+    {
+        int length = line.length();
+        for (int i = 0; i < length; ++i)
+        {
+            if (line[i] == '{' || line[i] == '}')
+            {
+                count++;
+            }
+        }
+    }
+
+    if (count % 2 == 0)
+    {
+        cout << "Good" << endl;
+    }
+    else
+    {
+        cout << "Bad" << endl;
+    }
+    
+    input_file.close();
+    return 0;
+}

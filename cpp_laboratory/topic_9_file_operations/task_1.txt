@@ -1,9 +1,0 @@
-Hello, this is a simple text file to test your program.
-Every programmer knows that debugging is like being the detective in a crime movie.
-Sometimes, all you need is a little more sleep.
-The quick brown fox jumps over the lazy dog.
-Programming languages are like pizzas – everyone has their favorite.
-In a world of technology, sometimes the best thing to do is log off.
-Remember, the best error message is the one that never shows up.
-Just because you can, doesn’t mean you should.
-Keep calm and code on.

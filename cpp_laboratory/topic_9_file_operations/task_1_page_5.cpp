@@ -1,5 +1,5 @@
 /*
- Дан файл. Найти строку, в которой доля гласных (a, e, i, o) максимальна.
+Дан файл. Найти строку, в которой доля гласных (a, e, i, o) максимальна.
 */
 
 #include <iostream>
@@ -10,24 +10,19 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../task_1.txt");
-    if (!input_file.is_open())
-    {
-        cerr << "Failed to open file" << endl;
-        return 1;
-    }
+    ifstream input_file("../1.txt");
 
-    string line, max_vowel_line;
+    string line, max_vowel_l;
     char vowels[] = {'a', 'e', 'i', 'o', 'u'};
-    double max_vowel_ratio = 0.0;
+    double max_vowel_r = 0.0;
 
     while (getline(input_file, line)) // Пока можем читать строки
     {
         if (line.empty()) continue;
 
-        int length = line.length();
+        int len = line.length();
         int count = 0;
-        for (int i = 0; i < length; ++i)  // Символы в строке
+        for (int i = 0; i < len; ++i)  // Символы в строке
         {
             for (unsigned int j = 0; j < sizeof(vowels)/sizeof(vowels[0]); ++j) // По каждой гласной из массива
             {
@@ -37,17 +32,14 @@ int main()
                 }
             }
         }
-        double current_ratio = (double) count / length; // Доля гласных в текущей строке
-        if (current_ratio > max_vowel_ratio)
+        double current_ratio = (double) count / len; // Доля гласных в текущей строке
+        if (current_ratio > max_vowel_r)
         {
-            max_vowel_ratio = current_ratio;
-            max_vowel_line = line;
+            max_vowel_r = current_ratio;
+            max_vowel_l = line;
         }
     }
 
-    cout << "Line with the highest number of vowels: " << max_vowel_line << endl;
-    cout << "Number of vowels in that line: " << max_vowel_ratio << endl;
-    
-    input_file.close();
-    return 0;
+    cout << "Line with the highest number of vowels: " << max_vowel_l << endl;
+    cout << "Number of vowels in that line: " << max_vowel_r << endl;
 }
