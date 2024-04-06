@@ -13,24 +13,20 @@ int main()
     ifstream input_file("../io_files/7.txt");
     ofstream result_file("../io_files/7_result.txt");
     
-    string line;
-    while (getline(input_file, line))
+    char ch;
+    while (input_file.get(ch))
     {
-        int len = line.length();
-        for (int i = 0; i < len; ++i)
+        if (ch >= '0' && ch < '9')
         {
-            if (line[i] >= '0' && line[i] < '9')
+            ch += 1;
+        }
+        else
+        {
+            if (ch == '9')
             {
-                line[i] += 1;
-            }
-            else
-            {
-                if (line[i] == '9')
-                {
-                    line[i] = '0';
-                }
+                ch = '0';
             }
         }
-        result_file << line << endl;
+        result_file << ch;
     }
 }

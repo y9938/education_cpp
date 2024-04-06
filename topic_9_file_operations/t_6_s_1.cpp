@@ -13,19 +13,18 @@ int main()
     ifstream input_file("../io_files/6_input.txt");
 
     char ch;
-    int count_open = 0;
-    int count_close = 0;
+    int balance = 0;
 
     while (input_file.get(ch))
     {
         if (ch == '{')
-            ++count_open;
+            ++balance;
         else
             if (ch == '}')
-                ++count_close;
+                --balance;
     }
     
-    if (count_open == count_close)
+    if (balance == 0)
         cout << "Good" << endl;
     else
         cout << "Bad" << endl;

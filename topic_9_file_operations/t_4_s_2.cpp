@@ -16,14 +16,11 @@ int main()
     string line;
     while (getline(input_file, line))
     {
-        int len = line.length();
-        for (int i = 0; i < len; ++i)
+        size_t pos = 0;
+        while ((pos = line.find('.', pos)) != string::npos)
         {
-            if (line[i] == '.')
-            {
-                line.insert(i + 1, "..");
-                i += 2;
-            }
+            line.insert(pos + 1, "..");
+            pos += 3;
         }
         result_file << line << endl;
     }

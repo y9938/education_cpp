@@ -13,22 +13,16 @@ int main()
     ifstream input_file("../io_files/4_input.txt");
     ofstream result_file("../io_files/4_result.txt");
 
-    string line;
-    while (getline(input_file, line))
+    char ch;
+    while (input_file.get(ch))
     {
-        string result; // Создаем новую строку и заполняем ее
-        int len = line.length();
-        for (int i = 0; i < len; ++i)
+        if (ch == '.')
         {
-            if (line[i] == '.')
-            {
-                result += "...";
-            }
-            else
-            {
-                result += line[i];
-            }
+            result_file << "...";
         }
-        result_file << result << endl;
+        else
+        {
+            result_file << ch;
+        }
     }
 }
