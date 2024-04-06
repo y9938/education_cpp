@@ -11,5 +11,33 @@ using namespace std;
 
 int main()
 {
-    
+    ifstream input_file("../io_files/9_input.txt");
+
+    string line;
+    int count_line = 0;
+    while (getline(input_file, line))
+    {
+        ++count_line;
+        int i = 0;
+        int len = line.length();
+        while (i < len)
+        {
+            while (line[i] == ' ' && i < len)
+                ++i;
+            int begin = i;
+            while (line[i] != ' ' && i < len)
+                ++i;
+            string word;
+            word = line.substr(begin, i - begin);
+            if (count_line % 2 == 0)
+            {
+                for (int j = word.length() - 1; j >= 0; --j)
+                    cout << word[j];
+                cout << " ";
+            }
+            else
+                cout << word << " ";
+        }
+        cout << endl;
+    }
 }

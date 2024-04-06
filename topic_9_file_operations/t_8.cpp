@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-int word_line(string line);
+int count_words(string line);
 
 int main()
 {
@@ -19,7 +19,7 @@ int main()
     string max_line; // Строка с максимальным количеством 
     while (getline(input_file, line))
     {
-        int count_word = word_line(line);
+        int count_word = count_words(line);
         if (count_word > max_word)
         {
             max_word = count_word;
@@ -31,18 +31,16 @@ int main()
     cout << "Max line: " << max_line << endl;
 }
 
-int word_line(string line)
+int count_words(string line)
 {
     int count_word = 0;
     int i = 0;
     int len = line.length();
     while (i < len)
     {
-        while (line[i] == ' ')
-            ++i;
+        while (i < len && line[i] == ' ') ++i;
         int begin = i;
-        while (line[i] != ' ' && i < len)
-            ++i;
+        while (i < len && line[i] != ' ') ++i;
         string word;
         word = line.substr(begin, i - begin);
         if (word.length() > 0)
