@@ -12,7 +12,6 @@ using namespace std;
 int main()
 {
     ifstream input_file("../io_files/9_input.txt");
-
     string line;
     int count_line = 0;
     while (getline(input_file, line))
@@ -22,10 +21,10 @@ int main()
         int len = line.length();
         while (i < len)
         {
-            while (line[i] == ' ' && i < len)
+            while (i < len && line[i] == ' ')
                 ++i;
             int begin = i;
-            while (line[i] != ' ' && i < len)
+            while (i < len && line[i] != ' ')
                 ++i;
             string word;
             word = line.substr(begin, i - begin);

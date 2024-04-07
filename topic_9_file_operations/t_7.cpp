@@ -10,9 +10,9 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/7.txt");
+    ifstream input_file("../io_files/7_input.txt");
     ofstream result_file("../io_files/7_result.txt");
-    
+
     char ch;
     while (input_file.get(ch))
     {

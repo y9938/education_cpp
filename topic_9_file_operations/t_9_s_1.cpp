@@ -14,7 +14,6 @@ string reverse_words(string line);
 int main()
 {
     ifstream input_file("../io_files/9_input.txt");
-
     string line;
     int count_line = 0;
     while (getline(input_file, line))

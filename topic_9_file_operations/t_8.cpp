@@ -13,7 +13,6 @@ int count_words(string line);
 int main()
 {
     ifstream input_file("../io_files/8_input.txt");
-
     string line;
     int max_word = 0; // Максимальное количество слов в строке
     string max_line; // Строка с максимальным количеством 
