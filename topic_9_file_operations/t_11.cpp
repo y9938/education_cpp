@@ -18,7 +18,7 @@ int main()
         if (line.empty()) continue;
         int i = 0;
         int len = line.length();
-        int min_word_len = 100;
+        int min_word_len = 1000;
         int min_word_index = 0;
         int n_word = 1; // Счетчик слов
         while (i < len)
