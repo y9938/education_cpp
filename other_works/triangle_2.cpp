@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 bool is_valid_triangle(double a, double b, double c);
@@ -18,16 +17,13 @@ int main()
     double a, b, c;
     cout << "Enter the lengths of the triangle's sides (a,b,c): ";
     cin >> a >> b >> c;
-
     if (!is_valid_triangle(a, b, c))
     {
         cout << "The entered numbers cannot form a valid triangle." << endl;
         return 1;
     }
-
     classify_triangle(a, b, c);
     cout << "The area of the triangle: " << calculate_area(a, b, c) << endl;
-
     return 0;
 }
 
@@ -39,17 +35,11 @@ bool is_valid_triangle(double a, double b, double c)
 void classify_triangle(double a, double b, double c)
 {
     if (c*c == a*a + b*b)
-    {
         cout << "Right-angled triangle" << endl;
-    }
     else if (c*c < a*a + b*b)
-    {
         cout << "Acute-angled triangle" << endl;
-    } 
     else 
-    {
         cout << "Obtuse-angled triangle" << endl;
-    }
 }
 
 double calculate_area(double a, double b, double c)

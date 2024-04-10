@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 bool is_valid_triangle(double a, double b, double c);
@@ -25,15 +24,10 @@ int main()
             cout << "The area of the triangle: " << calculate_area(a, b, c) << endl;
         }
         else
-        {
             cout << "The entered numbers cannot be the sides of a triangle." << endl;
-        }
     }
     else
-    {
         cout << "Input error: non-numeric values entered." << endl;
-    }
-
     return 0;
 }
 
@@ -47,17 +41,11 @@ bool is_valid_triangle(double a, double b, double c)
 void classify_triangle(double a, double b, double c)
 {
     if (a == b && b == c)
-    {
         cout << "Equilateral triangle" << endl;
-    }
     else if (a == b || a == c || b == c)
-    {
         cout << "Isosceles triangle" << endl;
-    }
     else
-    {
         cout << "Scalene triangle" << endl;
-    }
 }
 
 // Функция для вычисления площади треугольника по формуле Герона
