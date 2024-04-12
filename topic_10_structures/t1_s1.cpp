@@ -11,9 +11,7 @@ using namespace std;
 
 struct Date
 {
-    int day;
-    int month;
-    int year;
+    int day, month, year;
 };
 
 int main()
@@ -25,31 +23,18 @@ int main()
 
     for (int i = 0; i < N; ++i)
     {
-        // % 31 + 1 - (это от 1 до 31 включительно)
+        // % 31 + 1 -> (от 1 до 31 включительно)
         person[i].day = rand() % 31 + 1;
         person[i].month = rand() % 12 + 1;
-        person[i].year = rand() % 2024; // до 2023 (включ.)
+        person[i].year = rand() % 2024; // от 0 до 2023 (включ.)
     }
 
     string result[N];
+    string seasons[] = {"Winter", "Spring", "Summer", "Autumn"};
     for (int i = 0; i < N; ++i)
     {
-        int season = (person[i].month % 12) / 3;
-        switch (season)
-        {
-            case 0:
-                result[i] = "Winter";
-                break;
-            case 1:
-                result[i] = "Spring";
-                break;
-            case 2:
-                result[i] = "Summer";
-                break;
-            case 3:
-                result[i] = "Autumn";
-                break;
-        }
+        int season_index = (person[i].month % 12) / 3;
+        result[i] = seasons[season_index];
     }
 
     int century[N];

@@ -63,6 +63,18 @@ int main()
         }
     }
 
+    /*
+    string result[N];
+    for (int i = 0; i < N; ++i)
+    {
+        int season = (person[i].month % 12) / 3;
+        if (season == 0) result[i] = "Winter";
+        else if (season == 1) result[i] = "Spring";
+        else if (season == 2) result[i] = "Summer";
+        else if (season == 3) result[i] = "Autumn";
+    }
+    */
+
     for (int i = 0; i < N; ++i)
     {
         int century;
