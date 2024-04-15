@@ -10,12 +10,12 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/3_input.txt");
-    ofstream result_file("../io_files/3_result.txt");
+    ifstream in_f("../io_files/3_in.txt");
+    ofstream out_f("../io_files/3_out.txt");
 
     string line, st = "star";
     int len_st = st.length();
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         int len = line.length();
         bool found = false;
@@ -39,6 +39,6 @@ int main()
                 }
             }
         }
-        result_file << line << endl;
+        out_f << line << endl;
     }
 }

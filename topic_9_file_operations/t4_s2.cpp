@@ -10,11 +10,11 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/4_input.txt");
-    ofstream result_file("../io_files/4_result.txt");
+    ifstream in_f("../io_files/4_in.txt");
+    ofstream out_f("../io_files/4_out.txt");
 
     string line;
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         size_t pos = 0;
         while ((pos = line.find('.', pos)) != string::npos)
@@ -22,6 +22,6 @@ int main()
             line.insert(pos + 1, "..");
             pos += 3;
         }
-        result_file << line << endl;
+        out_f << line << endl;
     }
 }

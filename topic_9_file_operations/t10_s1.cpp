@@ -11,9 +11,9 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/10_input.txt");
+    ifstream in_f("../io_files/10_in.txt");
     string word;
-    while (input_file >> word)
+    while (in_f >> word)
     {
         if (word[0] == 'a') word.erase(0, 1);
         cout << word << " ";

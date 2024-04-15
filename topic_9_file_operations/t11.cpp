@@ -11,9 +11,9 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/11_input.txt");
+    ifstream in_f("../io_files/11_in.txt");
     string line;
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         if (line.empty()) continue;
         int i = 0;

@@ -10,19 +10,19 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/4_input.txt");
-    ofstream result_file("../io_files/4_result.txt");
+    ifstream in_f("../io_files/4_in.txt");
+    ofstream out_f("../io_files/4_out.txt");
 
     char ch;
-    while (input_file.get(ch))
+    while (in_f.get(ch))
     {
         if (ch == '.')
         {
-            result_file << "...";
+            out_f << "...";
         }
         else
         {
-            result_file << ch;
+            out_f << ch;
         }
     }
 }

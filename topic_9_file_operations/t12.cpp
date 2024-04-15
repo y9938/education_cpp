@@ -11,10 +11,10 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/12_input.txt");
-    ofstream result_file("../io_files/12_result.txt");
+    ifstream in_f("../io_files/12_in.txt");
+    ofstream out_f("../io_files/12_out.txt");
     string line;
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         if (line.empty()) continue;
         int len = line.length();
@@ -22,6 +22,6 @@ int main()
         while (i > 0 && line[i] == ' ') --i;
         while (i > 0 && line[i] != ' ') --i;
         line.erase(i, len - i);
-        result_file << line << endl;
+        out_f << line << endl;
     }
 }

@@ -12,5 +12,5 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../9_input.txt");
+    ifstream in_f("../9_in.txt");
 }

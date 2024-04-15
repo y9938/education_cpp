@@ -10,13 +10,13 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/6_input.txt");
+    ifstream in_f("../io_files/6_in.txt");
 
     char ch;
     int count_open = 0;
     int count_close = 0;
 
-    while (input_file.get(ch))
+    while (in_f.get(ch))
     {
         if (ch == '{')
             ++count_open;

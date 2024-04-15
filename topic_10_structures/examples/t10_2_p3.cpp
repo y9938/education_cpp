@@ -23,7 +23,7 @@ struct tr
 int main()
 {
     ifstream fin; //файл для чтения
-    fin.open("e:\\x.txt");
+    fin.open("../io_files/10_2_p3_in.txt");
     if(!fin.is_open()) //если не удалось открыть файл
     {
         cout<<"Файл не найден";

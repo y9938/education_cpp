@@ -10,11 +10,11 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/7_input.txt");
-    ofstream result_file("../io_files/7_result.txt");
+    ifstream in_f("../io_files/7_in.txt");
+    ofstream out_f("../io_files/7_out.txt");
     
     char ch;
-    while (input_file.get(ch))
+    while (in_f.get(ch))
     {
         if (ch >= '0' && ch <= '9')
         {
@@ -22,6 +22,6 @@ int main()
             ch = (ch + 1) % 10;
             ch += '0';
         }
-        result_file << ch;
+        out_f << ch;
     }
 }

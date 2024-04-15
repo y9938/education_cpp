@@ -9,11 +9,11 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/2_input.txt");
-    ofstream output_file("../io_files/2_result.txt");
+    ifstream in_f("../io_files/2_in.txt");
+    ofstream out_f("../io_files/2_out.txt");
 
     string line;
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         if (line.empty()) continue;
 
@@ -22,7 +22,7 @@ int main()
             ++i;
         if (line[i] >= '0' && line[i] <= '9')
         {
-            output_file << line << endl;
+            out_f << line << endl;
         }
     }
 }

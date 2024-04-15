@@ -11,9 +11,9 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/10_input.txt");
+    ifstream in_f("../io_files/10_in.txt");
     string line;
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         int i = 0;
         int len = line.length();

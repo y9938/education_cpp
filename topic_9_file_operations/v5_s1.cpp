@@ -12,11 +12,11 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/5_input.txt");
-    ofstream result_file("../io_files/5_result.txt");
+    ifstream in_f("../io_files/5_in.txt");
+    ofstream out_f("../io_files/5_out.txt");
 
-    string line, result;
-    while (getline(input_file, line))
+    string line;
+    while (getline(in_f, line))
     {
         int len = line.length();
         bool pal = true;
@@ -32,16 +32,16 @@ int main()
 
         if (pal)
         {
-            result_file << line << endl;
+            out_f << line << endl;
         }
         else
         {
-            result_file << line << " ";
+            out_f << line << " ";
             for (int i = line.length() - 1; i >= 0; --i)
             {
-                result_file << line[i];
+                out_f << line[i];
             }
-            result_file << endl;
+            out_f << endl;
         }
     }
 }

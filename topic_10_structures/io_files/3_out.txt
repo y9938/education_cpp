@@ -1,0 +1,12 @@
+б: Audi 2020 black 35000
+б: Tesla 2023 black 45000
+б: Tesla 2021 black 35000
+в:
+Expensive car: Porsche 2022 red 60000
+Cheap car: Lada 1980 green 5000
+г:
+Old car: Lada 1980 green 5000
+New car: Toyota 2024 white 25000
+д:
+Tesla 2023 black 45000
+Tesla 2021 black 35000

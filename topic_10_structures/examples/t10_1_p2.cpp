@@ -21,7 +21,7 @@ struct painting
 int main() 
 {  
     ifstream fin;  //файл для чтения  
-    fin.open("e:\\инф.txt"); 
+    fin.open("../io_files/10_in.txt"); 
     if(!fin.is_open())  //если не удалось открыть файл  
     {   
         cout<<"Файл не найден";   

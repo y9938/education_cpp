@@ -10,16 +10,16 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/3_input.txt");
-    ofstream result_file("../io_files/3_result.txt");
+    ifstream in_f("../io_files/3_in.txt");
+    ofstream out_f("../io_files/3_out.txt");
 
     string line, st = "star";
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         if (line.find(st) != string::npos)
         {
             line = "* " + line;
         }
-        result_file << line << endl;
+        out_f << line << endl;
     }
 }

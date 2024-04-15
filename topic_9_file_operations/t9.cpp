@@ -11,10 +11,10 @@ using namespace std;
 
 int main()
 {
-    ifstream input_file("../io_files/9_input.txt");
+    ifstream in_f("../io_files/9_in.txt");
     string line;
     int count_line = 0;
-    while (getline(input_file, line))
+    while (getline(in_f, line))
     {
         ++count_line;
         int i = 0;

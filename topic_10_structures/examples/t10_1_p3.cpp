@@ -31,8 +31,8 @@ int main()
     triangle t;
     int equilateral_c = 0, right_angled_c = 0, other_c = 0;
 
-    ifstream input_file("../io_files/10_input.txt");
-    while (input_file >> t.a >> t.b >> t.c)
+    ifstream in_f("../io_files/10_in.txt");
+    while (in_f >> t.a >> t.b >> t.c)
     {
         if (is_triangle(t.a, t.b, t.c))
         {
