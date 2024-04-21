@@ -11,7 +11,7 @@
 #include <string>
 using namespace std;
 
-const int MAX_GRAGES = 5;
+const int MAX_GRADES = 5;
 
 struct student_record
 {
@@ -19,7 +19,7 @@ struct student_record
     string name; // Имя
     string patronymic; // Отчество
     string group; // Группа
-    int grades[MAX_GRAGES]; // Оценки
+    int grades[MAX_GRADES]; // Оценки
 };
 
 bool has_no_threes(int grades[]);
@@ -33,7 +33,7 @@ int main()
     student_record stu;
     while (in_f >> stu.surname >> stu.name >> stu.patronymic >> stu.group)
     {
-        for (int i = 0; i < MAX_GRAGES; ++i)
+        for (int i = 0; i < MAX_GRADES; ++i)
             in_f >> stu.grades[i];
         
         if (has_no_threes(stu.grades))
@@ -46,14 +46,14 @@ int main()
 
 bool has_no_threes(int grades[])
 {
-    for (int i = 0; i < MAX_GRAGES; ++i)
+    for (int i = 0; i < MAX_GRADES; ++i)
         if (grades[i] == 3) return false;
     return true;
 }
 
 bool has_debts(int grades[])
 {
-    for (int i = 0; i < MAX_GRAGES; ++i)
+    for (int i = 0; i < MAX_GRADES; ++i)
         if (grades[i] < 3) return true;
     return false;
 }
