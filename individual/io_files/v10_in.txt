@@ -1,0 +1,10 @@
+Smith       150.75      1
+Johnson     275.50      2
+Williams    0           1
+Brown       425.30      3
+Jones       0           2
+Garcia      189.99      1
+Miller      0           3
+Davis       315.80      2
+Rodriguez   0           1
+Martinez    550.00      3
