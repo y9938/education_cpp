@@ -56,10 +56,12 @@ void calculate_debts(record arr[], int size)
 {
     int i = 0;
     cout << "\n" << "НОМЕР ЖЭКа" << "\tСУММА ДОЛГА" << "\n\n";
-    while (i < size) { // проход по массиву
+    while (i < size) 
+    {
         string current_hcs = arr[i].hcs_number;
         double total_debt = 0;
-        while (i < size && arr[i].hcs_number == current_hcs) {
+        while (i < size && arr[i].hcs_number == current_hcs) 
+        {
             total_debt += arr[i].debt_amount; // подсчет суммы долга по текущему ЖЭКу
             ++i;
         }

@@ -10,16 +10,7 @@
 #include <cctype>
 using namespace std;
 
-bool is_int(const string& word)
-{
-    if (word.empty()) return false;
-    int len = word.length();
-    int start = (word[0] == '-') ? 1 : 0;
-    if (len == start) return false; // Строка только `-`
-    for (int i = start; i < len; ++i) 
-        if (!isdigit(word[i])) return false;
-    return true;
-}
+bool is_int(const string& word);
 
 int main()
 {
@@ -54,4 +45,15 @@ int main()
         }
         out_f << endl;
     }
+}
+
+bool is_int(const string& word)
+{
+    if (word.empty()) return false;
+    int len = word.length();
+    int start = (word[0] == '-') ? 1 : 0;
+    if (len == start) return false; // Строка только `-`
+    for (int i = start; i < len; ++i) 
+        if (!isdigit(word[i])) return false;
+    return true;
 }
