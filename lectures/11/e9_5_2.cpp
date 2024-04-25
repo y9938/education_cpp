@@ -13,8 +13,6 @@ int main()
     cout<<"Key = ";
     cin>> key;
     int l = 0, r = n - 1, s;
-    bool Found = false;
-    // флаг
     do
     {
         s = (l + r) / 2;
