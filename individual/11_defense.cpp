@@ -1,3 +1,9 @@
+/*
+Выполнить поиск заданного значения в массиве
+Линейный поиск: последнее вхождение
+Двоичный поиск (метод интерполяции): первое вхождение
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -5,32 +11,33 @@ void bubble_sort(int arr[], int size);
 int liner(const int arr[], int size, int key);
 int interpolation(const int arr[], int size, int key);
 
-int main() {
-    int a[100];
+int main() 
+{
+    int C[25];
     int n;
     cout << "Enter the size of array: ";
     cin >> n;
     cout << "Enter the array: ";
-    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < n; ++i) cin >> C[i];
 
     int key;
     cout << "Key = ";
     cin >> key; // Ввод значения для поиска
 
-    bubble_sort(a, n);
+    bubble_sort(C, n);
     cout << "\nAfter sort: ";
     for (int i = 0; i < n; ++i)
     {
-        cout << a[i] << " ";
+        cout << C[i] << " ";
     }
 
-    int ind_l = liner(a, n, key);
+    int ind_l = liner(C, n, key);
     if (ind_l != -1)
         cout << "\nLast occurrence = " << ind_l + 1 << endl;
     else
         cout << "\nThere is no such element!" << endl;
 
-    int ind_i = interpolation(a, n, key);
+    int ind_i = interpolation(C, n, key);
     if (ind_i != -1)
         cout << "First occurrence at position = " << ind_i + 1 << "\n";
     else

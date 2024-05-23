@@ -1,32 +1,39 @@
+/*
+Выполнить поиск заданного значения в массиве
+Линейный поиск: последнее вхождение
+Двоичный поиск (метод интерполяции): первое вхождение
+*/
+
 #include <iostream>
 using namespace std;
 
 void bubble_sort(int arr[], int size);
 
-int main() {
-    int a[100];
+int main() 
+{
+    int C[25];
     int n;
     cout << "Enter the size of array: ";
     cin >> n;
     cout << "Enter the array: ";
-    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < n; ++i) cin >> C[i];
 
     int key;
     cout << "Key = ";
     cin >> key; // Ввод значения для поиска
 
-    bubble_sort(a, n);
+    bubble_sort(C, n);
     cout << "\nAfter sort: ";
     for (int i = 0; i < n; ++i)
     {
-        cout << a[i] << " ";
+        cout << C[i] << " ";
     }
-
+    
     // Линейный поиск последнего вхождения
     int ind_l = -1; // Индекс последнего вхождения ключа, -1 означает, что ключ не найден
     for (int i = n - 1; i > 0; --i) 
     {
-        if (a[i] == key)
+        if (C[i] == key)
         {
             ind_l = i; // Обновляем индекс последнего вхождения
             break;
@@ -36,16 +43,16 @@ int main() {
         cout << "\nLast occurrence = " << ind_l + 1 << endl;
     else
         cout << "\nThere is no such element!" << endl;
-
+    
     // Интерполяционный поиск первого вхождения
     int l = 0, r = n - 1, s; // Индексы левой и правой границ поиска, s - индекс текущего элемента
     bool found = false;
     while ((l <= r) && !found) 
     { 
-        s = l + (key - a[l]) * (r - l) / (a[r] - a[l]); // Вычисляем позицию для проверки
-        if (a[s] == key) 
+        s = l + (key - C[l]) * (r - l) / (C[r] - C[l]); // Вычисляем позицию для проверки
+        if (C[s] == key) 
             found = true;
-        else if (a[s] < key) 
+        else if (C[s] < key) 
             l = s + 1;
         else 
             r = s - 1;
