@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream in_f("../io_files/6_in.txt");
+    ifstream in_f("io_files/6_in.txt");
 
     char ch;
     int count_open = 0;

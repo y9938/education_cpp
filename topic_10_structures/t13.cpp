@@ -28,7 +28,7 @@ double average_num_items(int n_rec, int items[]);
 
 int main()
 {
-    ifstream in_f("../io_files/13_in.txt");
+    ifstream in_f("io_files/13_in.txt");
 
     int over_2_items = 0;
     int items[MAX_RECORDS];

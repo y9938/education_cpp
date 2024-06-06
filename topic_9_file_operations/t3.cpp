@@ -10,8 +10,8 @@ using namespace std;
 
 int main()
 {
-    ifstream in_f("../io_files/3_in.txt");
-    ofstream out_f("../io_files/3_out.txt");
+    ifstream in_f("io_files/3_in.txt");
+    ofstream out_f("io_files/3_out.txt");
 
     string line, st = "star";
     int len_st = st.length();

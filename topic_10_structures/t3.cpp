@@ -30,8 +30,8 @@ void out(ostream& os, avto& cs);
 
 int main()
 {
-    ifstream in_f("../io_files/3_in.txt");
-    ofstream out_f("../io_files/3_out.txt");
+    ifstream in_f("io_files/3_in.txt");
+    ofstream out_f("io_files/3_out.txt");
     
     avto cs[MAX_A]; // Массив машин
     int n = 0; // Реальное количество

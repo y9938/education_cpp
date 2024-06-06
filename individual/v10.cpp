@@ -21,7 +21,7 @@ struct record
 
 int main()
 {
-    ifstream in_f("../io_files/v10_in.txt");
+    ifstream in_f("io_files/v10_in.txt");
 
     record rec;
     double debt_hcs[MAX_HCS] = {}; // Суммы долгов по каждому ЖЭКу

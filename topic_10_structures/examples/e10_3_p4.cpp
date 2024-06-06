@@ -51,9 +51,9 @@ void max_price(book arr[], int size)
 
 int main()
 {
-    ifstream fin("../io_files/10_3_p4_in.txt"); //исходный файл
+    ifstream fin("io_files/10_3_p4_in.txt"); //исходный файл
     ofstream bookf; //файл для записи отсортированного массива
-    bookf.open("../io_files/10_3_p4_out.txt");
+    bookf.open("io_files/10_3_p4_out.txt");
     if(!fin.is_open())
     {
         cout<<"Файл не найден";

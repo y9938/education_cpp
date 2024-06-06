@@ -26,7 +26,7 @@ void kol_books(record arr[], int size);
 
 int main()
 {
-    ifstream in_f("../io_files/10_in.txt");
+    ifstream in_f("io_files/10_in.txt");
 
     record rec[MAX_REC];
     int n_rec = 0; // Реальное количество записей

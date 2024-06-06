@@ -14,8 +14,8 @@ bool is_int(const string& word);
 
 int main()
 {
-    ifstream in_f("../io_files/9_in.txt");
-    ofstream out_f("../io_files/9_out.txt");
+    ifstream in_f("io_files/9_in.txt");
+    ofstream out_f("io_files/9_out.txt");
 
     string line;
     while (getline(in_f, line))

@@ -27,8 +27,8 @@ bool has_debts(int grades[]);
 
 int main()
 {
-    ifstream in_f("../io_files/11_in.txt");
-    ofstream out_f("../io_files/11_out.txt");
+    ifstream in_f("io_files/11_in.txt");
+    ofstream out_f("io_files/11_out.txt");
 
     student_record stu;
     while (in_f >> stu.surname >> stu.name >> stu.patronymic >> stu.group)

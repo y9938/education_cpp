@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    ifstream in_f("../io_files/9_in.txt");
+    ifstream in_f("io_files/9_in.txt");
     string line;
     int count_line = 0;
     while (getline(in_f, line))

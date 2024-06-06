@@ -10,8 +10,8 @@ using namespace std;
 
 int main()
 {
-    ifstream in_f("../io_files/7_in.txt");
-    ofstream out_f("../io_files/7_out.txt");
+    ifstream in_f("io_files/7_in.txt");
+    ofstream out_f("io_files/7_out.txt");
 
     char ch;
     while (in_f.get(ch))

@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream in_f("../io_files/1_in.txt");
+    ifstream in_f("io_files/1_in.txt");
 
     string line, max_vowel_l;
     char vowels[] = {'a', 'e', 'i', 'o', 'u'};
