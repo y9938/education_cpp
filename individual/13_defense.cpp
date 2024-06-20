@@ -12,7 +12,7 @@ using namespace std;
 
 struct List
 {
-    double value;
+    int value;
     List* next;
 };
 
@@ -32,6 +32,9 @@ int main()
 
     double result = calculate_expression(head, N);
     cout << "Result of the expression: " << result << endl;
+    print_list(head);
+
+    delete_even_nodes(head);
     print_list(head);
 }
 
@@ -94,11 +97,10 @@ void delete_even_nodes(List*& head)
 {
     List* current = head;
     List* prev = nullptr;
-    int position = 0;
 
     while (current != nullptr)
     {
-        if (position % 2 == 0)
+        if (current->value % 2 == 0)
         {
             List* temp = current;
             if (prev == nullptr)
@@ -117,7 +119,6 @@ void delete_even_nodes(List*& head)
             prev = current;
             current = current->next;
         }
-        ++position;
     }
 }
 

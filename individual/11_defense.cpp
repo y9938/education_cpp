@@ -8,7 +8,7 @@
 using namespace std;
 
 void bubble_sort(int arr[], int size);
-int liner(const int arr[], int size, int key);
+int linear(const int arr[], int size, int key);
 int interpolation(const int arr[], int size, int key);
 
 int main() 
@@ -31,7 +31,7 @@ int main()
         cout << C[i] << " ";
     }
 
-    int ind_l = liner(C, n, key);
+    int ind_l = linear(C, n, key);
     if (ind_l != -1)
         cout << "\nLast occurrence = " << ind_l + 1 << endl;
     else
@@ -57,7 +57,7 @@ void bubble_sort(int arr[], int size)
 }
 
 // Линейный поиск последнего вхождения
-int liner(const int arr[], int size, int key)
+int linear(const int arr[], int size, int key)
 {
     int ind_l = -1; // Индекс последнего вхождения ключа, -1 означает, что ключ не найден
     for (int i = size - 1; i > 0; --i) 
