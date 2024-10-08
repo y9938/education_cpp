@@ -12,7 +12,7 @@ struct List
     List *prev, *next;
 };
 
-void add_node(List *&head, char c)
+void add_node(List *&head, char c, List *&last_node)
 {
     List *new_node = new List; // Создаем новый узел
     new_node->sym = c;         // Устанавливаем символ
@@ -22,16 +22,13 @@ void add_node(List *&head, char c)
     if (!head)
     {
         head = new_node;
+        last_node = head;
     }
     else
     {
-        List *temp = head;
-        while (temp->next) // Идем до последнего узла
-        {
-            temp = temp->next;
-        }
-        temp->next = new_node; // Добавляем новый узел в конец
-        new_node->prev = temp; // Устанавливаем указатель на предыдущий узел
+        last_node->next = new_node; // Добавляем новый узел в конец
+        new_node->prev = last_node; // Устанавливаем указатель на предыдущий узел
+        last_node = new_node;
     }
 }
 
@@ -82,12 +79,13 @@ int main()
 
     cout << "Enter characters (enter '.' to complete): " << endl;
 
+    List *last_node = 0;
     while (true)
     {
         input = cin.get(); // Считываем символ, включая пробелы
         if (input == '.')
             break;
-        add_node(head, input);
+        add_node(head, input, last_node);
     }
 
     cout << "List of symbols: ";
