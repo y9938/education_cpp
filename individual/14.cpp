@@ -16,10 +16,7 @@ struct List
 
 void add_node(List *&head, char input, List *&last_node)
 {
-    List *new_node = new List; // Создаем новый узел
-    new_node->sym = input;     // Устанавливаем символ
-    new_node->prev = nullptr;  // Указатель на предыдущий узел
-    new_node->next = nullptr;  // Указатель на следующий узел
+    List *new_node = new List{input, nullptr, nullptr};
 
     if (!head)
     {
@@ -84,10 +81,9 @@ void exclude_words_by_char_code_sum(List *&head, int number)
                 delete_node(head, to_delete);
                 to_delete = next_node;
             }
+            current = end_word->next;
+            continue;
         }
-
-        if (current)
-            current = current->next;
     }
 }
 
