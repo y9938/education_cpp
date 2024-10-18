@@ -50,6 +50,19 @@ void delete_node(List *&head, List *&node)
     }
 }
 
+void duplication_word(List *head, List *word_start, List *word_end)
+{
+    List *left = word_start;
+    List *right = word_end;
+    List *after_end = word_end->next;
+    while (left != right)
+    {
+        List *new_node = new List{left->sym, right, nullptr};
+        right->next = new_node;
+        left = left->next;
+    }
+}
+
 void exclude_words_by_char_code_sum(List *&head, int number)
 {
     List *current = head;
