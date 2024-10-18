@@ -56,32 +56,32 @@ void exclude_words_by_char_code_sum(List *&head, int number)
 
     while (current)
     {
-        List *start_word = nullptr, *end_word = nullptr;
+        List *word_start = nullptr, *word_end = nullptr;
         int sum = 0;
 
         while (current && current->sym == ' ')
         {
             current = current->next;
         }
-        start_word = current;
+        word_start = current;
 
         while (current && current->sym != ' ')
         {
             sum += current->sym;
-            end_word = current;
+            word_end = current;
             current = current->next;
         }
 
-        if (sum % number == 0 && start_word && end_word)
+        if (sum % number == 0 && word_start && word_end)
         {
-            List *to_delete = start_word;
-            while (to_delete != end_word->next)
+            List *to_delete = word_start;
+            while (to_delete != word_end->next)
             {
                 List *next_node = to_delete->next;
                 delete_node(head, to_delete);
                 to_delete = next_node;
             }
-            current = end_word->next;
+            current = word_end->next;
             continue;
         }
     }
