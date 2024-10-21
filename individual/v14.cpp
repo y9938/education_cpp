@@ -32,100 +32,71 @@ void add_node(List *&head, char input, List *&last_node)
     }
 }
 
-void delete_node(List *&head, List *&node)
+void print_list(List *node, bool reverse = false)
 {
-    if (node == head)
+    if (reverse)
     {
-        head = head->next;
-        if (head)
-            head->prev = nullptr;
-        delete node;
+        while (node)
+        {
+            cout << node->sym;
+            node = node->prev;
+        }
     }
     else
     {
-        if (node->prev)
-            node->prev->next = node->next;
-        if (node->next)
-            node->next->prev = node->prev;
-        delete node;
-    }
-}
-
-void duplication_word(List *left, List *right)
-{
-    List *start = left;
-    int count = 1;
-    while (left != right)
-    {
-        left = left->next;
-        ++count;
-    }
-    List *after_end = right->next;
-    left = start;
-    for (int i = 0; i < count; ++i)
-    {
-        List *new_node = new List{left->sym, right, after_end};
-        if (after_end)
+        while (node)
         {
-            after_end->prev = new_node;
+            cout << node->sym;
+            node = node->next;
         }
-        right->next = new_node;
-        right = new_node;
-        left = left->next;
-    }
-}
-
-void func(List *head, int number)
-{
-    List *current = head;
-
-    // Выделение слова и работа с ним
-    while (current)
-    {
-        List *word_start = nullptr, *word_end = nullptr;
-        int sum = 0;
-
-        while (current && current->sym == ' ')
-        {
-            current = current->next;
-        }
-        word_start = current;
-
-        while (current && current->sym != ' ')
-        {
-            sum += current->sym;
-            word_end = current;
-            current = current->next;
-        }
-
-        if (word_start && word_end && sum % number == 0)
-        {
-            duplication_word(word_start, word_end);
-        }
-    }
-}
-
-void print_list(List *head)
-{
-    List *current = head;
-    while (current)
-    {
-        cout << current->sym;
-        current = current->next;
     }
     cout << endl;
 }
 
+bool is_symmetric(List *left, List *right)
+{
+    while (left != right && left && right)
+    {
+        if (left->sym != right->sym)
+            return false;
+
+        left = left->next;
+        right = right->prev;
+    }
+    return true;
+}
+
+void func(List *head, List *last_node)
+{
+    List *current = head;
+
+    // Выделение слова и работа с ним
+    List *word_start = nullptr, *word_end = nullptr;
+    int sum = 0;
+
+    while (current && current->sym == ' ')
+    {
+        current = current->next;
+    }
+    word_start = current;
+
+    while (current && current->sym != ' ')
+    {
+        sum += current->sym;
+        word_end = current;
+        current = current->next;
+    }
+
+    if (is_symmetric(word_start, word_end))
+        print_list(last_node, true);
+    else
+        print_list(head);
+}
+
 int main()
 {
-    List *head = 0;
-    List *last_node = 0;
+    List *head = 0, *last_node = 0;
     char input;
-
-    int your_number;
-    cout << "Enter a number: ";
-    cin >> your_number;
-    cin.ignore(); // Игнорируем символ новой строки после ввода числа
 
     cout << "Enter characters (enter '.' to complete): " << endl;
 
@@ -137,8 +108,5 @@ int main()
         add_node(head, input, last_node);
     }
 
-    func(head, your_number);
-
-    cout << "After editing:\n";
-    print_list(head);
+    func(head, last_node);
 }

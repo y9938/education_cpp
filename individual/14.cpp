@@ -85,13 +85,12 @@ void exclude_words_by_char_code_sum(List *&head, int number)
     }
 }
 
-void print_list(List *head)
+void print_list(List *node)
 {
-    List *current = head;
-    while (current)
+    while (node)
     {
-        cout << current->sym;
-        current = current->next;
+        cout << node->sym;
+        node = node->next;
     }
     cout << endl;
 }
