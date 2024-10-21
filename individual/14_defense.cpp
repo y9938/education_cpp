@@ -1,5 +1,5 @@
 /*
-Исключить  из списка  слова, сумма кодов символов которых кратна заданному числу.
+Продублировать слова, сумма кодов символов которых кратна заданному числу.
 Сформировать двунаправленный список символов, заканчивая
 ввод точкой. Слова в этом списке разделены пробелами. Выполнить
 указанные действия.
@@ -50,10 +50,35 @@ void delete_node(List *&head, List *&node)
     }
 }
 
-void exclude_words_by_char_code_sum(List *&head, int number)
+void duplication_word(List *left, List *right)
+{
+    List *start = left;
+    int count = 1;
+    while (left != right)
+    {
+        left = left->next;
+        ++count;
+    }
+    List *after_end = right->next;
+    left = start;
+    for (int i = 0; i < count; ++i)
+    {
+        List *new_node = new List{left->sym, right, after_end};
+        if (after_end)
+        {
+            after_end->prev = new_node;
+        }
+        right->next = new_node;
+        right = new_node;
+        left = left->next;
+    }
+}
+
+void func(List *head, int number)
 {
     List *current = head;
 
+    // Выделение слова и работа с ним
     while (current)
     {
         List *word_start = nullptr, *word_end = nullptr;
@@ -74,13 +99,7 @@ void exclude_words_by_char_code_sum(List *&head, int number)
 
         if (word_start && word_end && sum % number == 0)
         {
-            List *to_delete = word_start;
-            while (to_delete != word_end->next)
-            {
-                List *next_node = to_delete->next;
-                delete_node(head, to_delete);
-                to_delete = next_node;
-            }
+            duplication_word(word_start, word_end);
         }
     }
 }
@@ -117,7 +136,7 @@ int main()
         add_node(head, input, last_node);
     }
 
-    exclude_words_by_char_code_sum(head, your_number);
+    func(head, your_number);
 
     cout << "After editing:\n";
     print_list(head);
